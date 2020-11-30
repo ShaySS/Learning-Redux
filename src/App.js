@@ -1,10 +1,11 @@
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "./redux/actions";
+import { changeColor, decrement, increment } from "./redux/actions";
 import Box from "./components/Box";
 
 const App = () => {
   const myCount = useSelector((state) => state.countValue); //extract state.countValue and assign it to myCount
+  const boxColor = useSelector((state) => state.color);
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
@@ -14,14 +15,18 @@ const App = () => {
     dispatch(decrement());
   };
 
+  const handleColorChange = () => {
+    dispatch(changeColor());
+  };
+
   return (
     <main>
       <h1> Count: {myCount} </h1>
       <button onClick={handleIncrement}>Increment</button>
       <button onClick={handleDecrement}>Decrement</button>
 
-      <button>Change color</button>
-      <Box color="blue" />
+      <button onClick={handleColorChange}>Change color </button>
+      <Box color={`${boxColor}`} />
     </main>
   );
 };
