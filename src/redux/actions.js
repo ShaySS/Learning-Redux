@@ -8,6 +8,11 @@ export const decrement = () => ({
   type: actions.DECREMENT,
 });
 
-export const changeColor = () => ({
+export const changeColor = (color) => ({
   type: actions.COLORCHANGE,
+  payload: {
+    color: color,
+  },
 });
+
+//further learning: try adding a payload?

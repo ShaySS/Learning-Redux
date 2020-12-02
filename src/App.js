@@ -5,7 +5,7 @@ import Box from "./components/Box";
 
 const App = () => {
   const myCount = useSelector((state) => state.countValue); //extract state.countValue and assign it to myCount
-  const boxColor = useSelector((state) => state.color);
+  const boxColor = useSelector((state) => state.colorasdf);
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
@@ -18,15 +18,15 @@ const App = () => {
   const handleColorChange = () => {
     dispatch(changeColor());
   };
+  console.log("box color", boxColor);
 
   return (
     <main>
       <h1> Count: {myCount} </h1>
       <button onClick={handleIncrement}>Increment</button>
       <button onClick={handleDecrement}>Decrement</button>
-
       <button onClick={handleColorChange}>Change color </button>
-      <Box color={`${boxColor}`} />
+      <Box color={`#${boxColor}`} />
     </main>
   );
 };

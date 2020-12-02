@@ -1,11 +1,11 @@
 //Root reducer
 import { combineReducers } from "redux";
-import counter from "./counter";
-import colorChanger from "./colorChanger";
+import counter from "./counter/counter";
+import colorChanger from "./colorChanger/colorChanger";
 
 const rootReducer = combineReducers({
   countValue: counter,
-  color: colorChanger,
+  colorasdf: colorChanger,
 });
 // Can also just write 'counter' in the curly braces, it would be ES6 sugar for counter: counter. Using the
 // name countValue is a custom name, it can be whatever you want
