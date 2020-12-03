@@ -1,6 +1,7 @@
 import { put, takeEvery, call } from "redux-saga/effects";
 import * as actions from "../redux/actionTypes";
 import axios from "axios";
+import { changeColorAsync } from "../redux/actions";
 
 function* colorChangeAsync() {
   try {
@@ -10,20 +11,14 @@ function* colorChangeAsync() {
       "http://www.colr.org/json/color/random"
     );
     console.log("response", response.data.new_color);
-    yield put({
-      type: actions.COLORCHANGEASYNC,
-      payload: {
-        color: response.data.new_color,
-      },
-    });
-    //   .then((res) => console.log(`#${res.data.new_color}`));
-    // axios.get(url)
-    //   .then((res) =>
-    //     put({
-    //       type: actions.COLORCHANGEASYNC,
-    //       color: res.data.new_color,
-    //     })
-    //   );
+    // yield put({
+    //   type: actions.COLORCHANGEASYNC,
+    //   payload: {
+    //     color: response.data.new_color,
+    //   },
+    // });
+    // above code is equivalent to line 21!
+    yield put(changeColorAsync(response.data.new_color));
   } catch (e) {
     console.log("error", e);
   }

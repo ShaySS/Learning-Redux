@@ -15,4 +15,11 @@ export const changeColor = (color) => ({
   },
 });
 
+export const changeColorAsync = (color) => ({
+  type: actions.COLORCHANGEASYNC,
+  payload: {
+    color: color,
+  },
+});
+
 //further learning: try adding a payload?

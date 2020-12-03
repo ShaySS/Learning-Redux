@@ -5,7 +5,7 @@ import Box from "./components/Box";
 
 const App = () => {
   const myCount = useSelector((state) => state.countValue); //extract state.countValue and assign it to myCount
-  const boxColor = useSelector((state) => state.colorasdf);
+  const boxColor = useSelector((state) => state.color);
   const dispatch = useDispatch();
 
   const handleIncrement = () => {

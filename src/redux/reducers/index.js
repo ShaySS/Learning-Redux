@@ -5,7 +5,7 @@ import colorChanger from "./colorChanger/colorChanger";
 
 const rootReducer = combineReducers({
   countValue: counter,
-  colorasdf: colorChanger,
+  color: colorChanger,
 });
 // Can also just write 'counter' in the curly braces, it would be ES6 sugar for counter: counter. Using the
 // name countValue is a custom name, it can be whatever you want
